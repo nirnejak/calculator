@@ -15,7 +15,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "lint": "eslint ./ --cache",
+    "lint-fix": "eslint ./ --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +37,28 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0"
+  },
+  "lint-staged": {
+    "*.js": "eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && pretty-quick --staged"
+    }
   }
 }
