@@ -80,6 +80,18 @@ function App() {
     }
   }
 
+  const togglePositiveNegative = () => {
+    setInput(input * -1)
+  }
+
+  const calculateSquare = () => {
+    setResult(input * input)
+  }
+
+  const calculateSquareRoot = () => {
+    setResult(Math.sqrt(input))
+  }
+
   const clearCalculator = () => {
     setResult(0)
     setInput(0)
@@ -119,10 +131,9 @@ function App() {
         </div>
         {isScientificMode && (
           <div className="row">
-            <Button>+/-</Button>
-            <Button>Square</Button>
-            <Button>Square Root</Button>
-            <Button>Divide (/)</Button>
+            <Button onClick={togglePositiveNegative}>+/-</Button>
+            <Button onClick={calculateSquare}>Square</Button>
+            <Button onClick={calculateSquareRoot}>Square Root</Button>
           </div>
         )}
         <div className="row">
