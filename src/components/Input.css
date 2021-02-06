@@ -1,2 +1,11 @@
 input.input {
+  flex: 1;
+  appearance: none;
+  outline: none;
+  padding: 10px;
+
+  border: 1px solid var(--text-color);
+  background-color: var(--text-color);
+  color: var(--background-color);
+  text-align: right;
 }

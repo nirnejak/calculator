@@ -1,3 +1,9 @@
+:root {
+  --text-color: #ebebeb;
+  --border-color: #2f3437;
+  --background-color: #2f3437;
+}
+
 body {
   margin: 0;
   box-sizing: border-box;
@@ -6,6 +12,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 code {
