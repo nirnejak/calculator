@@ -6,6 +6,8 @@ import Input from "./components/Input"
 import "./App.css"
 
 function App() {
+  const [isScientificMode, setIsScientificMode] = React.useState(false)
+
   const [operation, setOperation] = React.useState("")
   const [result, setResult] = React.useState(0)
   const [operandFirst, setOperandFirst] = React.useState(0)
@@ -14,6 +16,23 @@ function App() {
   React.useEffect(() => {
     setInput(result)
   }, [result])
+
+  const chooseTheme = (isLight) => {
+    const rootElement = document.querySelector(":root")
+    if (isLight) {
+      rootElement.style.setProperty("--background-color", "#fff")
+      rootElement.style.setProperty("--button-color", "#f0f0f0")
+      rootElement.style.setProperty("--text-color", "#000")
+    } else {
+      rootElement.style.setProperty("--background-color", "#000")
+      rootElement.style.setProperty("--button-color", "#666")
+      rootElement.style.setProperty("--text-color", "#fff")
+    }
+  }
+
+  const toggleScientificMode = () => {
+    setIsScientificMode(!isScientificMode)
+  }
 
   const addInput = (value) => {
     if (operandFirst === input) {
@@ -97,6 +116,19 @@ function App() {
           <Button onClick={() => addInput(0)}>0</Button>
           <Button onClick={calculateResult}>=</Button>
           <Button onClick={() => addOperation("/")}>Divide (/)</Button>
+        </div>
+        {isScientificMode && (
+          <div className="row">
+            <Button>+/-</Button>
+            <Button>Square</Button>
+            <Button>Square Root</Button>
+            <Button>Divide (/)</Button>
+          </div>
+        )}
+        <div className="row">
+          <Button onClick={toggleScientificMode}>Scientific Mode</Button>
+          <Button onClick={() => chooseTheme(true)}>Light Theme</Button>
+          <Button onClick={() => chooseTheme(false)}>Dark Theme</Button>
         </div>
       </div>
     </div>

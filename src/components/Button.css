@@ -1,10 +1,12 @@
 button.button {
   flex: 1;
+
   appearance: none;
   outline: none;
   padding: 10px;
 
-  border: 1px solid var(--text-color);
-  background-color: var(--background-color);
+  cursor: pointer;
+  border: 1px solid var(--button-color);
+  background-color: var(--button-color);
   color: var(--text-color);
 }

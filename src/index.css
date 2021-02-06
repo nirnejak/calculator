@@ -1,7 +1,7 @@
 :root {
-  --text-color: #ebebeb;
-  --border-color: #2f3437;
-  --background-color: #2f3437;
+  --button-color: #f0f0f0;
+  --background-color: #fff;
+  --text-color: #000;
 }
 
 body {
